@@ -31,6 +31,11 @@ function GameScreen({ userNumber, onGameOver }) {
     }
   }, [currentGuess, userNumber, onGameOver]);
 
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []); // effect when game screen is FIRST executed, keep dependency list empty
+
   function nextGuessHandler(direction) {
     // direction => 'lower', 'greater'
 
